@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mrp_production_inherit_1" model="ir.ui.view">
+        <field name="name">inherit.mrp.production.tree</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="unit_cost" widget="monetary" sum="Total Cost In Unit"/>
+                <field name="total_cost" widget="monetary" sum="Total Cost of Orders"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
